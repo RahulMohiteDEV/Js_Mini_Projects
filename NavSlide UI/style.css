@@ -1,0 +1,63 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header & Button */
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  position: relative;
+}
+
+.menu-btn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background-color: #222;
+  transition: left 0.3s ease-in-out;
+  padding-top: 4rem;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav li {
+  margin: 20px 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.nav.show {
+  left: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}

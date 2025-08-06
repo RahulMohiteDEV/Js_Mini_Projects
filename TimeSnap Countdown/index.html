@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⏱️ TimeSnap Countdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .input-area {
+      margin-bottom: 20px;
+    }
+    input[type="datetime-local"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #countdown {
+      font-size: 2em;
+      margin-top: 30px;
+      color: #007bff;
+    }
+  </style>  
+</head>
+<body>
+  <h1>⏱️ TimeSnap Countdown</h1>
+  <div class="input-area">
+    <label for="futureDate">Set Future Date & Time:</label><br><br>
+    <input type="datetime-local" id="futureDate">
+    <br><br>
+    <button onclick="startCountdown()">Start Countdown</button>
+  </div>
+
+  <div id="countdown">Waiting for input...</div>
+
+  <script>
+    let countdownInterval;
+
+    function startCountdown() {
+      clearInterval(countdownInterval); 
+
+      const targetDate = new Date(document.getElementById("futureDate").value);
+      if (isNaN(targetDate.getTime())) {
+        document.getElementById("countdown").innerText = "❌ Invalid date!";
+        return; 
+      }
+    
+      countdownInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+
+        if (distance < 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("countdown").innerText = "🎉 Countdown Complete!";
+          return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById("countdown").innerText = 
+          `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dynamic Cards Reveal</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:#f0f0f0;">
+
+  <!-- Heading -->
+  <h2 style="text-align:center; margin:20px;">
+    🖼️ Dynamic Cards Reveal Gallery
+  </h2>
+
+  <!-- Gallery Container -->
+  <div id="gallery"
+    style="display:flex; gap:10px; justify-content:center; padding:20px; height:300px;">
+    
+    <!-- Card 1 -->
+    <div onclick="expandCard(this)"
+      style="flex:1; transition:all 0.4s ease; cursor:pointer; overflow:hidden; border-radius:10px;">
+      <img src="https://picsum.photos/id/1015/600/400" alt="Image 1"
+        style="width:100%; height:100%; object-fit:cover;">
+    </div>
+
+    <!-- Card 2 -->
+    <div onclick="expandCard(this)"
+      style="flex:1; transition:all 0.4s ease; cursor:pointer; overflow:hidden; border-radius:10px;">
+      <img src="/Bio-Pesticides.jpg" alt="Image 2"
+        style="width:100%; height:100%; object-fit:cover;">
+    </div>
+
+    <!-- Card 3 -->
+    <div onclick="expandCard(this)"
+      style="flex:1; transition:all 0.4s ease; cursor:pointer; overflow:hidden; border-radius:10px;">
+      <img src="https://picsum.photos/id/1035/600/400" alt="Image 3"
+        style="width:100%; height:100%; object-fit:cover;">
+    </div>
+
+      <!-- Card 3 -->
+    <div onclick="expandCard(this)"
+      style="flex:1; transition:all 0.4s ease; cursor:pointer; overflow:hidden; border-radius:10px;">
+      <img src="/Agriculture2.png" alt="Image 3"
+        style="width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    function expandCard(selectedCard) {
+      const cards = document.querySelectorAll('#gallery > div');
+
+      cards.forEach(card => {
+        if (card === selectedCard) {
+          card.style.flex = "6"; // Expand selected
+        } else {
+          card.style.flex = "1"; // Shrink others
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

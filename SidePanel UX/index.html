@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SidePane UX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="openPane" class="open-btn">Open SidePane</button>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- SidePane -->
+  <div id="sidePane" class="side-pane">
+    <div class="side-pane-header">
+      <h2>Settings</h2>
+      <span id="closePane" class="close-btn">×</span>
+    </div>
+    <div class="side-pane-content">
+      <p>This is extra content like filters or settings.</p>
+      <label><input type="checkbox" /> Enable notifications</label><br />
+      <label><input type="checkbox" /> Dark Mode</label>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

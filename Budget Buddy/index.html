@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💸 BudgetBuddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💸 BudgetBuddy</h1>
+    
+    <div class="form">
+      <input type="text" id="text" placeholder="Description" />
+      <input type="number" id="amount" placeholder="Amount (use negative for expense)" />
+      <button id="addBtn">Add Transaction</button>
+    </div>
+
+    <div class="summary">
+      <h3>Balance: ₹<span id="balance">0</span></h3>
+      <p>Income: ₹<span id="income">0</span></p>
+      <p>Expense: ₹<span id="expense">0</span></p>
+    </div>
+
+    <h3>Transaction History</h3>
+    <ul id="transactionList"></ul>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
